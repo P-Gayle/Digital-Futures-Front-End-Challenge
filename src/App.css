@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.App {
+  background-color: rgb(248, 250, 251);
+  padding-bottom: 20px;
+
+}
+
+[data-theme='dark'] {
+  background-color: black;
+  color: aliceblue;
+
+}
+
+.theme-toggle i {
+  font-size: 2rem;
+  cursor: pointer;
+  padding-bottom: 6px;
+  padding-top: 10px;
+  
+}
+
+.theme-toggle {
+  text-align:center;
+  margin-top: 10px;
+    
+}
