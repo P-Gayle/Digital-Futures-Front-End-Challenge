@@ -34,7 +34,8 @@ const AllHeadlines = () => {
   const headlineDisplay = newsData.map(newsItem => (
 
       <Headline
-        key={newsItem.id}
+      key={newsItem.id}
+      id={newsItem.id}
         img={newsItem.fields.thumbnail}
         headline={newsItem.fields.headline}
         />
