@@ -1,5 +1,6 @@
 import '../summary/summary.css'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Summary = (props) => {
 
@@ -9,8 +10,10 @@ const Summary = (props) => {
     
     return (
         <div className="summary">
-            <img src={props.img} alt="headline" className="article-image" />
-            <h2 className='article-title'>{props.headline}</h2>
+            <img src={props.img} alt="headline" className="article-image" />          
+            <Link to={props.link} className="article-link">
+                <h2 className='article-title'>{props.headline}</h2>
+            </Link>
             <p className="article-body">{props.bodyText}</p>        
         </div>
     );

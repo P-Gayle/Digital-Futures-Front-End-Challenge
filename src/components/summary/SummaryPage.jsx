@@ -41,6 +41,7 @@ const SummaryPage = () => {
         img={selectedNewsItem.fields.thumbnail}
         headline={selectedNewsItem.fields.headline}
         bodyText={selectedNewsItem.fields.bodyText}
+        link={selectedNewsItem.webUrl}
       />
     </div>
   );
