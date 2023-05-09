@@ -1,3 +1,5 @@
+https://main--not-the-guardian-news.netlify.app/
+
 ## COMPONENTS HIERARCHY
 
 ### There will be 3 components:
@@ -13,9 +15,6 @@ Extended:
 ![component hierarchy page 2 ](./images/component-hierarchy-2.svg)
 
 - Whilst not included on the wireframe, a Header component was added for a better UI
-- Due to difficulties with the Router, the ArticleSummary component has been omitted.
-
-## TESTS
 
 ## AllHeadlines
 
