@@ -7,7 +7,7 @@ import SummaryPage from './components/summary/SummaryPage';
 
 function App() {
 
-  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+  const [theme, setTheme] = useLocalStorage('theme', 'dark')
   const [themeText, setThemeText] = useLocalStorage('Dark Theme');
   const [themeIcon, setThemeIcon] = useLocalStorage("fa-solid fa-moon")
 
