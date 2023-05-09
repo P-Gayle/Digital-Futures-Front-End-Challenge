@@ -1,14 +1,15 @@
-// import mockNewsData from '../../mockNewsData.json';
-// const newsData = mockNewsData.response.results
 
-import Headline from '../Headline/Headline';
 import React, { useState, useEffect } from 'react';
 import { fetchNewsData } from '../../utils/api';
+import Summary from '../summary/Summary';
+import { useParams } from "react-router-dom";
 
-const AllHeadlines = () => {
+const SummaryPage = () => {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const { id } = useParams();
+
 
   useEffect(() => {
     const getNews = async () => {
@@ -31,18 +32,18 @@ const AllHeadlines = () => {
     return <p>Loading...</p>;
   }
 
-  const headlineDisplay = newsData.map(newsItem => (
-
-      <Headline
-      key={newsItem.id}
-      id={newsItem.id}
-        img={newsItem.fields.thumbnail}
-        headline={newsItem.fields.headline}
-        />
+  //decodeURIComponent(id) to enable the use of special characters in the url so that the route can be accessed
+  const selectedNewsItem = newsData.find(newsItem => newsItem.id === decodeURIComponent(id));
   
-  ));
-
-  return <>{headlineDisplay}</>;
+  return (
+    <div>
+      <Summary
+        img={selectedNewsItem.fields.thumbnail}
+        headline={selectedNewsItem.fields.headline}
+        bodyText={selectedNewsItem.fields.bodyText}
+      />
+    </div>
+  );
 };
 
-export default AllHeadlines;
+export default SummaryPage;

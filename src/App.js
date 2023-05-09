@@ -2,6 +2,8 @@ import './App.css';
 import AllHeadlines from './components/AllHeadlines/AllHeadlines';
 import Header from './components/Header/Header';
 import useLocalStorage from 'use-local-storage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SummaryPage from './components/summary/SummaryPage';
 
 function App() {
 
@@ -19,16 +21,23 @@ function App() {
   }
 
   return (
-    <div className="App" data-theme={theme}>
+    
+        <BrowserRouter>
+          <div className="App" data-theme={theme}>
+            <Header />
+            <div className="theme-toggle">
+                <i onClick={switchTheme} className={themeIcon}></i>
+                <h5>{themeText}</h5>
+            </div>
+            <Routes>
 
-     <Header />
-        <div className="theme-toggle">
-            <i onClick={switchTheme} className={themeIcon}></i>
-            <h5>{themeText}</h5>
-        </div>
-      <AllHeadlines /> 
-      
-    </div>
+              <Route path="/" element={<AllHeadlines />} />
+              <Route path="/summary/:id" element={<SummaryPage />} />
+
+            </Routes>
+
+          </div>
+        </BrowserRouter>   
   );
 }
 
